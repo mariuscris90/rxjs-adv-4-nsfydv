@@ -115,11 +115,11 @@ const with_latest_from_obs = interval(1000).pipe(
   )
 )
 
-// const sub = with_latest_from_obs.subscribe(v => {
-//   console.log(v)
-// })
+const sub = with_latest_from_obs.subscribe(v => {
+  console.log(v)
+})
 
-// setTimeout(() => {
-//   sub.unsubscribe();
-// }, 10000)
+setTimeout(() => {
+  sub.unsubscribe();
+}, 10000)
 

@@ -38,18 +38,18 @@ console.clear();
 
 // MERGE MAP
 
-const merge_map_obs = interval(2000)
-  .pipe(
-    tap(() => console.log('------------')),
-    mergeMap(v => interval(500)
-      .pipe(
-        map(val => ({
-          value: val,
-          color: colors[v]
-        })),
-      )
-    )
-  )
+// const merge_map_obs = interval(2000)
+//   .pipe(
+//     tap(() => console.log('------------')),
+//     mergeMap(v => interval(500)
+//       .pipe(
+//         map(val => ({
+//           value: val,
+//           color: colors[v]
+//         })),
+//       )
+//     )
+//   )
 
 // const sub = merge_map_obs.subscribe(val => {
 //   console.log(`%c${val.value}`, `color: ${val.color}`);
@@ -155,10 +155,10 @@ const exhaust_map_obs = interval(2000)
     )
   )
 
-// const sub = exhaust_map_obs.subscribe(val => {
-//   console.log(`%c${val.value}`, `color: ${val.color}`);
-// })
+const sub = exhaust_map_obs.subscribe(val => {
+  console.log(`%c${val.value}`, `color: ${val.color}`);
+})
 
-// setTimeout(() => {
-//   sub.unsubscribe();
-// }, 10000);
+setTimeout(() => {
+  sub.unsubscribe();
+}, 10000);

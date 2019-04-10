@@ -1,3 +1,3 @@
-import './transformations';
-// import './combinations'
-
+//import './transformations';
+import './combinations'
+// import './flattening';
